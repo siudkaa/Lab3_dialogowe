@@ -5,8 +5,126 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab3_dialogowe"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="700" Width="900">
     <Grid>
-        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Background="#ff350d" Grid.Column="1">
+                <Grid Margin="0 0 0 0" Background="#FFE6FF00">
+                    <Grid Height="auto" Background="#8cd4be" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10" >
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70" />
+                            <RowDefinition Height="3"/>
+                            <RowDefinition Height="50" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <Border  Grid.ColumnSpan="3" Grid.Row="0" Padding="10 5 5 5" Background="White" >
+                            <Grid>
+                                <Image  Source="./Images_ofPizza/sangiovanni.png" Margin="22,0,391,0" Height="122" VerticalAlignment="Center" RenderTransformOrigin="0.661,0.534" />
+                                <TextBlock Text="San Giovanni Pizza" FontSize="32" FontWeight="Bold"  VerticalAlignment="Center"  HorizontalAlignment="Left" Foreground="Red" Padding="50 0 0 0" Margin="325,0,0,0"/>
+                            </Grid>
+                        </Border>
+                        <Border Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="1" BorderBrush="#ff0000" BorderThickness="3" />
+
+                        <Border  Grid.Column="0" Grid.Row="2" Padding="10 0 0 0" Margin="0 10 0 10" VerticalAlignment="Center" >
+                            <Grid>
+                                <TextBlock FontSize="16" FontWeight="Bold" Foreground="Black" ><Run Text="Twoje"/><Run Text=" zamówieni"/><Run Text="e"/></TextBlock>
+                                <Line X1="0" Y1="25" X2="200" Y2="25" Stroke="#ed054e" Grid.Row="2" StrokeThickness="2"/>
+                            </Grid>
+                        </Border>
+
+                        <Border  Grid.Column="1" Grid.Row="2" Padding="10 0 0 0" Margin="0 10 0 10" VerticalAlignment="Center" >
+                            <Grid>
+                                <Label x:Name="order_Price" Content="Wartość zamówienia: 0" FontWeight="Bold" FontSize="16" Margin="10,-9,-31,-24"/>
+                                <Line X1="0" Y1="25" X2="200" Y2="25" Stroke="#ed054e" Grid.Row="2" StrokeThickness="2"/>
+                            </Grid>
+                        </Border>
+
+
+                        <Border  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Padding="10 0 0 0" Margin="0,10,0,0" VerticalAlignment="Top" Height="461" >
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+
+                                <Border  Grid.Column="0" Grid.Row="0" Padding="10 0 0 0" Margin="0 10 0 10" VerticalAlignment="Center" >
+                                    <Grid/>
+                                </Border>
+
+
+                                <Border  Grid.Column="1" Grid.Row="0" Padding="10 0 0 0" Margin="0 10 0 10" VerticalAlignment="Center" >
+                                    <Grid/>
+                                </Border>
+                                <Border  BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="10,45,0,0" VerticalAlignment="Top" Width="131" Grid.Row="3" Grid.RowSpan="2">
+                                    <Label Content="Pizza:" FontWeight="Bold" FontSize="16"/>
+                                </Border>
+                                <Border  BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="33,0,0,0" VerticalAlignment="Center" Width="131" Grid.Row="4"/>
+                                <Border  BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="12,167,0,0" VerticalAlignment="Top" Width="131" Grid.Row="4">
+                                    <Label Content="Sos:" FontSize="16" FontWeight="Bold" Margin="1,-14,-1,14"/>
+                                </Border>
+                                <Border  BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="20,30,0,0" Grid.Row="4" VerticalAlignment="Top" Width="131">
+                                    <ComboBox x:Name="selectedPizza" SelectionChanged="selectedPizza_SelectionChanged" Margin="-9,1,-81,-16"/>
+                                </Border>
+                                <Border  BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="20,0,0,0" Grid.Row="4" VerticalAlignment="Center" Width="131">
+                                    <ComboBox x:Name="additionalIngredients" Margin="-1,-7,-90,-7"/>
+                                </Border>
+                                <Border  BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="12,197,0,0" Grid.Row="4" VerticalAlignment="Top" Width="131">
+                                    <ComboBox x:Name="pizzaSauce" SelectionChanged="pizzaSauce_SelectionChanged" Margin="1,-9,-98,-13"/>
+                                </Border>
+                                <Border  BorderThickness="1" Grid.Column="4" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="131" Background="#FFFFF500">
+                                    <Label Content="Cena pizzy:" FontSize="16" FontWeight="Bold" Margin="-1,-68,1,56"/>
+                                </Border>
+                                <Border  BorderThickness="1" Grid.Column="4" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="131">
+                                    <Label x:Name="pizza_price" Content=""/>
+                                </Border>
+                                <Border  BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" VerticalAlignment="Top" Width="130">
+                                    <Label Content="Ciasto:" FontSize="16" FontWeight="Bold" Height="28" VerticalAlignment="Top"/>
+                                </Border>
+                                <Border  BorderThickness="1" HorizontalAlignment="Left" Height="30" VerticalAlignment="Center" Width="130" Grid.Row="2" Margin="10,0,0,0">
+                                    <Label Content="Rozmiar:" FontWeight="Bold" FontSize="16" Margin="0,-1,0,1"/>
+                                </Border>
+                                <Border  BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130">
+                                    <ComboBox x:Name="pizzaDough" Margin="0,0,-92,-14" />
+                                </Border>
+                                <Border  BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="10,45,0,0" Grid.Row="2" VerticalAlignment="Top" Width="131" Grid.RowSpan="2">
+                                    <ComboBox x:Name="pizza_size" Margin="1,1,-91,-15" />
+                                </Border>
+                                <Image x:Name="image" HorizontalAlignment="Left" Height="274" Grid.Row="3" VerticalAlignment="Top" Width="546" Grid.ColumnSpan="4" Grid.Column="1" Margin="133,25,0,0" Grid.RowSpan="2"/>
+                                <Image x:Name="dowidzenia" Grid.ColumnSpan="5" HorizontalAlignment="Left" Height="443" Margin="10,-118,0,0" Grid.RowSpan="5" VerticalAlignment="Top" Width="727" Visibility="Hidden" Panel.ZIndex="1000" Source="Images_ofPizza/pozegnanie.png"/>
+                                <Label Content="Dodatkowe składniki:" FontWeight="Bold" FontSize="16" Height="32" VerticalAlignment="Top" Margin="10,83,146,0" Grid.Row="4" Grid.ColumnSpan="2"/>
+
+
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+        </Grid>
+
     </Grid>
 </Window>

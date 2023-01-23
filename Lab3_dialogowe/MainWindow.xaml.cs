@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
+using System.Windows.Media; 
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -23,6 +23,16 @@ namespace Lab3_dialogowe
         public MainWindow()
             {
             InitializeComponent();
+            }
+
+        private void selectedPizza_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            {
+
+            }
+
+        private void pizzaSauce_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            {
+
             }
         }
     }
