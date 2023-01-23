@@ -6,8 +6,8 @@ xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
     <tag>out.confirmation=rules.latest();</tag>
   </rule>
 
-  <!--potwierdzenie zamowienia -->
-
+<!--potwierdzenie zamowienia -->
+  
   <rule id="confirmation">
     <one-of>
       <item>
