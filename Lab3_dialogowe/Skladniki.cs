@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Lab3_dialogowe
     {
-    internal class Skladniki
+    public class Ingredient
         {
+        public string Name { get; set; }
+        public int Price { get; set; }
+
+        public Ingredient(string name, int price)
+            {
+            Price = price;
+            Name = name;
+            }
+
         }
     }
